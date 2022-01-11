@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>RPGGOSS-v0.51</title>
+   <style>
+      span{
+        font-size: 18px;
+
+      }
+      input{
+         font-size: 20px;
+         background: gray;
+         border: 3px solid black;
+      }
+      /*div:nth-of-type(2){
+         margin-left: 35%;
+         color: gold;
+         display: inline-block;
+         font-size: 80px;
+      }*/
+      input:hover{
+         cursor: pointer;
+      }
+      summary{
+         font-size: 25px;
+      }
+      div:nth-of-type(1){
+         display: inline-block;
+         position: relative;
+         font-size: 0px;
+         margin-top: 20%;
+         margin-left: 40%;
+         color: red;
+      }
+      @keyframes lost {
+         0% {font-size: 0px; top: -200px;}
+         5% {font-size: 50px; transform: rotate3d(0, 1, 0, 180deg);}
+         20% {transform: rotate3d(1, 0, 0, 180deg);}
+         50% {transform: rotate3d(0, 0, 1, 180deg);}
+         60% {transform: rotate3d(1, 1, 1, 180 deg);}
+         70% {top: 0px; transform: rotate3d(1, 1, 1, -360deg);} 
+      }
+      @keyframes opa {
+         0% {opacity: 0;}
+         100% {opacity: 1;}
+      }
+      .joemama{
+         margin-left: 300px;
+         color: red;
+         font-size: 30px;
+         display: inline-block;
+      }
+      .dead{
+         animation: lost 5s linear 1;
+      }
+      .op{
+         animation: opa 6s linear 1;
+      }
+      progress::-webkit-progress-value{
+         background: lightblue;
+      }
+      progress::-moz-progress-bar { 
+         background: lightblue; 
+      }
+      progress{
+         background-color: lightgray;
+         border: 3px solid black;
+      }
+      meter{
+         border: 1px solid black;
+         width: 100px;
+         height: 15px;;
+      }
+      .msg{
+         position: fixed;
+         left: 40vw;
+         top: 15vh;
+         min-width: 50px;
+         min-height: 50px;
+         font-size: 30px;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      Rpg game of some sort
+      <br><br>
+      <span id="bosssword2"></span> <br>
+      <span id="bosssword"></span> <br>
+      <span id="enemyhead"></span> <br>
+      <span id="enemybody"></span> <br> 
+      <span id="enemylegs"></span> <br>
+      <span id="enemyfeet"></span>
+      <p>Enemy's health:</p> <progress value="0" max="1000" id="enhealth"></progress>
+      <br>
+      <p>Your Health:</p>
+      <progress value="100" max="100" id="urhelth"></progress> <input type="color" name="favcolor"> <br> <br>
+      <input type="button" value="attack">
+      <input type="button" value="Escape">
+	   <input type="button" value="Show_hp">
+      <input type="button" value="Terrorpod">
+      <input type="button" value="Terrorstone">
+      <input type="button" value="Skeleton_Mage">
+      <input type="button" value="Ogre">
+      <input type="button" value="Mini_golem">
+      <input type="button" value="DemonLord">
+      <input type="button" value="DemonKing">
+      <br>
+      <input type="button" value="Enemy_info">
+      <p>Enemy's Level: </p>
+      <meter value="0" max="100" id="enlvl"></meter>
+      <br>
+      <br>
+      <p>Your's level: </p>
+      <meter value="0" max="3" id="exp"></meter>
+      <span>level: </span>
+      <span id="lvl">0</span>
+      <br><br>
+      <p>Loot: </p>
+      <span id="loot">None </span><br>
+      <span id="loot2"> </span> <input type="button" value="keep"> <input type="button" value="sell">
+      <br><br>
+      <p>Inventory:</p> 
+      <span>Gold: </span> <span id="geld">0</span> <br>
+      <input type="button" value="show_stats">
+      <p>Weapon: </p><span id="wep">O==)====></span>
+      <p>Armour: </p>
+      <span id="arm">None</span><br>
+      <span id="arm2"></span> <br>
+      <p>Special: </p><span id="spec">None</span>
+      <p>Item: </p><span id="item">Mega Health potion</span> <input type="button" value="use">
+      <br><br>
+      <p>Shop: </p>
+      <span>5 Gold:</span> <input type="button" value="Health_Potion"> <br><br>
+      50 Gold: <input type="button" value="Mega_Health_Potion"> <br><br>
+      <span id="sword">25</span> Gold: <input type="button" value="Sword"> <span id="visualis"> Iron sword []==])====> +15 damage</span> <br><br>
+      <span id="dmgpot">500</span> Gold: <input type="button" value="damage_potion"> <span id="visualdmgpot">O=- +damage</span> <br><br>
+      <span id="hppot">750</span> Gold: <input type="button" value="Higher_health_potion"> <span>O+- +hp</span> <br><br> 
+
+      Casino <input type="button" value="gamble">
+      <br><br>
+      <input type="button" value="Save">
+      <input type="button" value="Load">
+      <input type="button" value="clear"><br><br>
+      <details>
+         <summary>
+            Changelog
+         </summary>
+         <p>-fixed saving for real now</p>
+         <p>-added giant golem boss</p>
+         <p>-added golem heart</p>
+         <p>-added golem armour</p>
+         <p>-rewritten item usement</p>
+      </details>  
+   </main>
+   <div class="die">You Died!</div>
+   <div class="joemama"></div>
+   <div class="msg"></div>
+   <script src="script.js"></script>
+</body>
+</html>
