@@ -189,6 +189,7 @@ function atk () {
          }
          else{
             loot.innerHTML = "|:OOO:|";
+            full = 1;
             loot2.innerHTML = "";
             lootg = 1;
          }    
@@ -299,6 +300,7 @@ document.querySelector("input[value=keep]").addEventListener("click", function()
       msgcls();
    }
    else if(lootgh == 1 && itemfull == 0){
+      itemfull = 1;
       item.innerHTML = "-:O>";
       full = 0;
       lootgh = 0;
@@ -481,15 +483,18 @@ document.querySelector("input[value=use]").addEventListener("click", function ()
    if(mhp == 1 && urhelth.value < urhelth.max) {
       urhelth.value = urhelth.max;
       item.innerHTML = "None"
+      itemfull = 0;
       mhp = 0;
    }
    if(healthp == 1 && urhelth.value < urhelth.max) {
+      itemfull = 0;;
       healthp = 0;
       urhelth.value += urhelth.max * 0.2;
       item.innerHTML = "None"
    }
    if(golemheart == 1 && enlvl.value == 45){
       item.innerHTML = "None";
+      itemfull = 0;
       golemheart = 0;
       enlvl.max = 200;
       enlvl.value = 200;
@@ -516,14 +521,14 @@ document.querySelector("input[value=Health_Potion]").addEventListener("click", f
          msg.innerHTML = "use the previous item first!";
          msgcls();
       }
-   if(gold < 5) {
+   else if(gold < 5) {
       msg.innerHTML = "Not enough gold!";
       }
-   if(enlvl.value >= 1) {
+   else if(enlvl.value >= 1) {
       msg.innerHTML = "Defeat your enemy first!";
       msgcls();
       }
-   if(gold >= 5 && itemfull == 0 && enlvl.value <= 0){
+   else if(gold >= 5 && itemfull == 0 && enlvl.value <= 0){
       item.innerHTML = "Health Potion";
       healthp = 1;
       gold -= 5;
@@ -535,15 +540,15 @@ document.querySelector("input[value=Health_Potion]").addEventListener("click", f
             msg.innerHTML = "use the previous item first!";
             msgcls();
          }
-      if(gold < 50) {
+      else if(gold < 50) {
          msg.innerHTML = "Not enough gold!";
          msgcls();
          }
-      if(enlvl.value >= 1) {
+      else if(enlvl.value >= 1) {
          msg.innerHTML = "Defeat your enemy first!";
          msgcls();
          }
-      if(gold >= 50 && itemfull == 0 && enlvl.value <= 0){
+      else if(gold >= 50 && itemfull == 0 && enlvl.value <= 0){
          item.innerHTML = "Mega Health potion";
          mhp = 1;
          gold -= 50;
