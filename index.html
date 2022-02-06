@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>RPGGOSS-v0.52</title>
+   <title>RPGGOSS-v0.54</title>
    <style>
       span{
         font-size: 18px;
@@ -81,10 +82,6 @@
          min-height: 50px;
          font-size: 30px;
       }
-      img{
-	 height: 1px;
-	 width: 1px;
-      }
    </style>
 </head>
 <body>
@@ -131,7 +128,7 @@
       <input type="button" value="show_stats">
       <p>Weapon: </p><span id="wep">O==)====></span>
       <p>Armour: </p>
-      <span id="arm">None</span><br>
+      <span id="arm"></span><br>
       <span id="arm2"></span> <br>
       <p>Special: </p><span id="spec">None</span>
       <p>Item: </p><span id="item">Mega Health potion</span> <input type="button" value="use">
@@ -152,17 +149,13 @@
          <summary>
             Changelog
          </summary>
-         <p>-fixed saving for real now</p>
-         <p>-added giant golem boss</p>
-         <p>-added golem heart</p>
-         <p>-added golem armour</p>
-         <p>-rewritten item usement</p>
+         <p>-demon sword's not stacking</p>
+         <p>-fixed golem armour infinite hp glitch</p>
       </details>  
    </main>
    <div class="die">You Died!</div>
    <div class="joemama"></div>
    <div class="msg"></div>
    <script src="script.js"></script>
-   <img src="Xizmn.png">
 </body>
 </html>
