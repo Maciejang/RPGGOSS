@@ -144,7 +144,7 @@ function atk () {
       xp.value += 650;
       enlvl.value = 0;
       if(finalboss == 0) {
-         weapon.innerHTML = "O===------>";
+         weapon.innerHTML += "O===------>";
          dmg += 400;
          finalboss = 1;
       }
@@ -165,7 +165,7 @@ function atk () {
       if(realfinalboss == 0) {
          dmg += 800;
          realfinalboss = 1;
-         weapon.innerHTML = "O---||------>";
+         weapon.innerHTML += "O---||------>";
       }
       
    }
@@ -188,6 +188,8 @@ function atk () {
             msgcls()
          }
          else{
+             msg.innerHTML = "You got golem armour!"
+             msgcls()
             loot.innerHTML = "|:OOO:|";
             full = 1;
             loot2.innerHTML = "";
@@ -284,12 +286,11 @@ document.querySelector("input[value=keep]").addEventListener("click", function()
       loot2.innerHTML = " ";
       msg.innerHTML = "+25 hp";
       msgcls();
-      armour.innerHTML = "ooo";
-      arm2.innerHTML = "OOO";
+      armour.innerHTML += "   ooo";
       urhelth.max += 25;
    }
    else if(loottpa == 1 && tparm == 0) {
-      armour.innerHTML = "|||----|||";
+      armour.innerHTML += "   |||----|||";
       arm2.innerHTML = "";
       full = 0;
       loot.innerHTML = "None";
@@ -309,7 +310,11 @@ document.querySelector("input[value=keep]").addEventListener("click", function()
    }
    else if(lootg == 1 && garm == 0){
       full = 0;
-      armour.innerHTML = "|:OOO:|";
+      lootg = 0;
+      garm = 1;
+      loot.innerHTML = "None";
+      loot2.innerHTML = "";
+      armour.innerHTML += "   |:OOO:|";
       arm2.innerHTML = "";
       urhelth.max += 200;
       msg.innerHTML = "+200 hp";
@@ -570,7 +575,7 @@ document.querySelector("input[value=Health_Potion]").addEventListener("click", f
       cool = 2;
       sword.innerHTML = "Chill";
       document.querySelector("span[id=visualis]").innerHTML = "Maxed Out";
-      weapon.innerHTML = "<=e=e=e=|[===B)";
+      weapon.innerHTML += "   <=e=e=e=|[===B)";
       }
    else if(gold >= swordprice && steels == 1){
       gold -= swordprice;
@@ -580,7 +585,7 @@ document.querySelector("input[value=Health_Potion]").addEventListener("click", f
       swordprice = 10000;
       sword.innerHTML = swordprice;
       document.querySelector("span[id=visualis]").innerHTML = "Sword skin <=e=e=e=|[===B) +1 coolness";
-      weapon.innerHTML = "<>---)======>";
+      weapon.innerHTML += "   <>---)======>";
       dmg += 35;
       }
    else if(gold >= swordprice && renis == 1){
@@ -591,7 +596,7 @@ document.querySelector("input[value=Health_Potion]").addEventListener("click", f
       swordprice += Math.trunc(swordprice * 1.4);
       sword.innerHTML = swordprice;
       document.querySelector("span[id=visualis]").innerHTML = "Steel sword <>---)======> +35 damage";
-      weapon.innerHTML = "<[]=={}=+==+=>";
+      weapon.innerHTML += "   <[]=={}=+==+=>";
       dmg += 25;
       }
    else if(gold >= swordprice && iron_sword == 0){
@@ -602,7 +607,7 @@ document.querySelector("input[value=Health_Potion]").addEventListener("click", f
       swordprice += Math.trunc(swordprice * 1.4);
       sword.innerHTML = swordprice;
       document.querySelector("span[id=visualis]").innerHTML = "reinforced iron sword <[]=={}=+==+=> +25 damage";
-      weapon.innerHTML = "[]==])====>";
+      weapon.innerHTML += "   []==])====>";
       dmg += 15;
       }
 
