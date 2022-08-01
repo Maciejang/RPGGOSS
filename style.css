@@ -1,0 +1,139 @@
+.inv p{
+    background-color: lightgray;
+    font-size: 150%;
+}
+.inv span{
+    background-color: lightgray;
+    border: 4px solid rgb(84, 84, 84);
+    border-radius: 50px;
+    font-size: 140%;
+}
+.inv{
+    grid-area: inv;
+    margin-left: 10%;
+    background-color: gray;
+    border: 5px solid black;
+}
+.shop{
+    grid-area: shop;
+    background-color: gray;
+    border: 5px solid black;
+    width: 90%;
+}
+.shop span{
+    background-color: lightgray;
+    border: 4px solid rgb(84, 84, 84);
+    border-radius: 50px;
+    font-size: 140%;
+}
+.shop input, .saving input, .inv input{
+    background-color: lightgray;
+}
+.saving{
+    grid-area: saving;
+    background-color: gray;
+    border: 5px solid black;
+    width: 90%;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "shop enbox inv"
+        "saving enbox inv";
+}
+span{
+    font-size: 18px;
+
+  }
+  input{
+     font-size: 20px;
+     background: gray;
+     border: 3px solid black;
+  }
+  input:hover{
+     cursor: pointer;
+  }
+  summary{
+     font-size: 25px;
+  }
+  .die{
+     display: inline-block;
+     position: relative;
+     font-size: 0px;
+     margin-top: 20%;
+     margin-left: 40%;
+     color: red;
+  }
+  @keyframes lost {
+     0% {font-size: 0px; top: -200px;}
+     5% {font-size: 50px; transform: rotate3d(0, 1, 0, 180deg);}
+     20% {transform: rotate3d(1, 0, 0, 180deg);}
+     50% {transform: rotate3d(0, 0, 1, 180deg);}
+     60% {transform: rotate3d(1, 1, 1, 180 deg);}
+     70% {top: 0px; transform: rotate3d(1, 1, 1, -360deg);} 
+  }
+  @keyframes opa {
+     0% {opacity: 0;}
+     100% {opacity: 1;}
+  }
+  .joemama{
+     margin-left: 300px;
+     color: red;
+     font-size: 30px;
+     display: inline-block;
+  }
+  .dead{
+     animation: lost 5s linear 1;
+  }
+  .op{
+     animation: opa 6s linear 1;
+  }
+  progress::-webkit-progress-value{
+     background: lightblue;
+  }
+  progress::-moz-progress-bar { 
+     background: lightblue; 
+  }
+  progress{
+     background-color: lightgray;
+     border: 3px solid black;
+  }
+  meter{
+     border: 1px solid black;
+     width: 100px;
+     height: 15px;;
+  }
+  .msg{
+     position: fixed;
+     left: 40vw;
+     top: 13vh;
+     min-width: 50px;
+     min-height: 50px;
+     font-size: 30px;
+  }
+  .enbox{
+    grid-area: enbox;
+    margin-top: 25%;
+    border: 5px solid black;
+    background-color: rgb(198, 195, 195);
+  }
+  .enemy{
+    text-align: center;
+    margin-left: 25%;
+    height: 50%;
+    width: 50%;
+    border: 3px solid gray;
+    border-radius: 30px;
+  }
+  details{
+    background-color: lightgray;
+    border: 4px solid rgb(84, 84, 84);
+  }
+  .enemy{
+    background-image: url("road.png");
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position-y: center;
+  }
